@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
     genero: document.getElementById('genero').value,
     puntuacion: Number(document.getElementById('puntuacion').value),
     resena: document.getElementById('resena').value.trim(),
-    portadsa: document.getElementById('portada').value.trim(),
+    portada: document.getElementById('portada').value.trim(),
     porque: document.getElementById('porque').value.trim()
   };
 
