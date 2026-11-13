@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameApp - Recomendaciones</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2c3152">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#" aria-label="GameApp, inicio">🎮 GameApp</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#formulario">Recomendar</a>
+      <a href="#catalogo">Catálogo</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="formulario" class="card-form">
+      <h1>Recomendá un juego</h1>
+      <p class="subtitle">Compartí con la comunidad tus juegos favoritos</p>
+
+      <form id="form-juego">
+        <div class="form-group">
+          <label for="titulo">Título del juego</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ej: The Legend of Zelda" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="genero">Género</label>
+            <select id="genero" name="genero" required>
+              <option value="" disabled selected>Seleccioná...</option>
+              <option value="Acción">Acción</option>
+              <option value="Aventura">Aventura</option>
+              <option value="Deportes">Deportes</option>
+              <option value="Estrategia">Estrategia</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="puntuacion">Puntuación (1 al 10)</label>
+            <input type="number" id="puntuacion" name="puntuacion" min="1" max="10" step="0.5" placeholder="Ej: 8" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resena">Reseña</label>
+          <textarea id="resena" name="resena" rows="3" placeholder="Contá qué te pareció el juego..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="portada">URL de la portada</label>
+          <input type="url" id="portada" name="portada" placeholder="https://ejemplo.com/portada.jpg" required>
+        </div>
+
+        <div class="form-group">
+          <label for="porque">¿Por qué lo recomendás?</label>
+          <textarea id="porque" name="porque" rows="3" placeholder="¿A quién se lo recomendarías?" required></textarea>
+        </div>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+        <button type="submit" class="btn-primary">Publicar recomendación</button>
+      </form>
+    </section>
+
+    <section id="catalogo" class="catalog-section">
+      <h2>Catálogo de la comunidad</h2>
+      <div id="contenedor-cards" class="grid-cards">
+        <p class="empty-message">Las recomendaciones aparecerán acá cuando conectemos el catálogo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto demo de recomendaciones de videojuegos</p>
+  </footer>
+
+
+  <script src="supabaseClient.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

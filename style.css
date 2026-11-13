@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f4f8;
+  color: #24263a;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px max(24px, calc((100% - 1080px) / 2));
+  background: #2c3152;
+  color: #fff;
+}
+
+.logo {
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  color: #e7e8f1;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.container {
+  width: min(100% - 32px, 1080px);
+  margin: 40px auto;
+}
+
+.card-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #e6e7ee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(34, 39, 72, 0.08);
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #2c3152;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 9px 0 26px;
+  color: #6b6e80;
+  line-height: 1.5;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #383b50;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d5d7e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #24263a;
+  font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9699a8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(124, 58, 237, 0.15);
+  border-color: #7c3aed;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 9px;
+  background: #6d4bd1;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #5838ba;
+}
+
+.catalog-section {
+  margin-top: 48px;
+}
+
+.catalog-section h2 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 24px;
+  border: 1px dashed #c9cbd7;
+  border-radius: 12px;
+  color: #6b6e80;
+  text-align: center;
+}
+
+.footer {
+  padding: 20px 16px;
+  background: #e9eaf0;
+  color: #66697a;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .container {
+    margin: 24px auto;
+  }
+
+  .card-form {
+    padding: 24px 18px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Mensajes de éxito / error al guardar (Práctico 3) */
+.mensaje {
+  margin: 0 0 16px;
+  padding: 0;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.mensaje.info,
+.mensaje.exito,
+.mensaje.error {
+  padding: 12px 14px;
+}
+
+.mensaje.info {
+  background: #eef0fb;
+  color: #2c3152;
+}
+
+.mensaje.exito {
+  background: #e6f6ec;
+  color: #166534;
+}
+
+.mensaje.error {
+  background: #fdeaea;
+  color: #991b1b;
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

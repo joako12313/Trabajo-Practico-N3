@@ -1,0 +1,16 @@
+{
+  "short_name": "GameApp",
+  "name": "GameApp - Recomendaciones de juegos",
+  "icons": [
+    {
+      "src": "icono.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#f3f4f8",
+  "theme_color": "#2c3152",
+  "display": "standalone",
+  "orientation": "portrait"
+}
